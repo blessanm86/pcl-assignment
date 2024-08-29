@@ -16,6 +16,9 @@
 [ ] - Deploy to some platform
 [ ] - Cleanup the README file
 
+/order-track
+/order-details
+
 
 # React + TypeScript + Vite
 
