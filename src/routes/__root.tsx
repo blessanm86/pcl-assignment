@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react'
-import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
+import React, { Suspense } from 'react';
+import { createRootRoute, Outlet } from '@tanstack/react-router';
 
 const TanStackRouterDevtools =
   process.env.NODE_ENV === 'production'
@@ -9,25 +9,30 @@ const TanStackRouterDevtools =
         import('@tanstack/router-devtools').then((res) => ({
           default: res.TanStackRouterDevtools,
         })),
-      )
+      );
 
 export const Route = createRootRoute({
-  component: () => (
-    <>
-      <div className="p-2 flex gap-2">
-        <Link to="/" className="[&.active]:font-bold">
-          Home
-        </Link>{' '}
-        <Link to="/order-details" className="[&.active]:font-bold">
-          About
-        </Link>
+  component: () => {
+    return (
+      <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        {/*<div className="p-2 flex gap-2">*/}
+        {/*  <Link to="/" className="[&.active]:font-bold">*/}
+        {/*    Home*/}
+        {/*  </Link>{' '}*/}
+        {/*  <Link to="/order-details" className="[&.active]:font-bold">*/}
+        {/*    About*/}
+        {/*  </Link>*/}
+        {/*</div>*/}
+        {/*<hr />*/}
+        {/*<h1 className="text-3xl font-bold underline ">Hello world!</h1>*/}
+        <div className="mx-auto max-w-[1280px]">
+          <Outlet />
+        </div>
+
+        <Suspense>
+          <TanStackRouterDevtools />
+        </Suspense>
       </div>
-      <hr />
-      <h1 className="text-3xl font-bold underline ">Hello world!</h1>
-      <Outlet />
-      <Suspense>
-        <TanStackRouterDevtools />
-      </Suspense>
-    </>
-  ),
-})
+    );
+  },
+});

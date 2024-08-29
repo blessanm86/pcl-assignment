@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as OrderDetailsImport } from './routes/order-details'
+import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
 
@@ -20,10 +21,22 @@ const OrderDetailsRoute = OrderDetailsImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const IndexRoute = IndexImport.update({
+  path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
     '/order-details': {
       id: '/order-details'
       path: '/order-details'
@@ -36,7 +49,10 @@ declare module '@tanstack/react-router' {
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren({ OrderDetailsRoute })
+export const routeTree = rootRoute.addChildren({
+  IndexRoute,
+  OrderDetailsRoute,
+})
 
 /* prettier-ignore-end */
 
@@ -46,8 +62,12 @@ export const routeTree = rootRoute.addChildren({ OrderDetailsRoute })
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
+        "/",
         "/order-details"
       ]
+    },
+    "/": {
+      "filePath": "index.tsx"
     },
     "/order-details": {
       "filePath": "order-details.tsx"
