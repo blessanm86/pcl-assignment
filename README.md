@@ -1,3 +1,22 @@
+# To Do
+[x] - Scaffold project via vite and setup git repo
+[ ] - Setup tanstack router with 2 routes
+[ ] - Create UI for the input page
+[ ] - Create UI for the details page
+[ ] - Setup form for the input page including validations
+[ ] - Setup MSW for API mocking
+[ ] - Setup routing between pages
+[ ] - Setup API request for input page
+[ ] - Ensure details page renders API data
+[ ] - Check for happy, error, direct url access, back button, refresh flows
+[ ] - Check for lint errors
+[ ] - Check for TS errors
+[ ] - Add some unit tests
+[ ] - Add e2e tests
+[ ] - Deploy to some platform
+[ ] - Cleanup the README file
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
