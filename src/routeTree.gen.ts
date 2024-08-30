@@ -11,18 +11,24 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as OrderDetailsImport } from './routes/order-details'
 import { Route as IndexImport } from './routes/index'
+import { Route as OrderTrackingImport } from './routes/order/tracking'
+import { Route as OrderDetailsImport } from './routes/order/details'
 
 // Create/Update Routes
 
-const OrderDetailsRoute = OrderDetailsImport.update({
-  path: '/order-details',
+const IndexRoute = IndexImport.update({
+  path: '/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const IndexRoute = IndexImport.update({
-  path: '/',
+const OrderTrackingRoute = OrderTrackingImport.update({
+  path: '/order/tracking',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const OrderDetailsRoute = OrderDetailsImport.update({
+  path: '/order/details',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -37,11 +43,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/order-details': {
-      id: '/order-details'
-      path: '/order-details'
-      fullPath: '/order-details'
+    '/order/details': {
+      id: '/order/details'
+      path: '/order/details'
+      fullPath: '/order/details'
       preLoaderRoute: typeof OrderDetailsImport
+      parentRoute: typeof rootRoute
+    }
+    '/order/tracking': {
+      id: '/order/tracking'
+      path: '/order/tracking'
+      fullPath: '/order/tracking'
+      preLoaderRoute: typeof OrderTrackingImport
       parentRoute: typeof rootRoute
     }
   }
@@ -52,6 +65,7 @@ declare module '@tanstack/react-router' {
 export const routeTree = rootRoute.addChildren({
   IndexRoute,
   OrderDetailsRoute,
+  OrderTrackingRoute,
 })
 
 /* prettier-ignore-end */
@@ -63,14 +77,18 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/order-details"
+        "/order/details",
+        "/order/tracking"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/order-details": {
-      "filePath": "order-details.tsx"
+    "/order/details": {
+      "filePath": "order/details.tsx"
+    },
+    "/order/tracking": {
+      "filePath": "order/tracking.tsx"
     }
   }
 }
