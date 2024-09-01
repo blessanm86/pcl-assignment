@@ -15,7 +15,7 @@
 [ ] - Add e2e tests
 [ ] - Deploy to some platform
 [ ] - Cleanup the README file
-[ ] - Look into path aliases
+[x] - Look into path aliases
 
 /order-track
 /order-details

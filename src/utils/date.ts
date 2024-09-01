@@ -1,9 +1,9 @@
 import { format, parseISO } from 'date-fns';
 
-export function formatDateTime(timestamp: string): string {
+export function formatISODateTime(timestamp: string): string {
   return format(new Date(timestamp), 'dd.MM.yyyy, H:mm');
 }
 
-export function getHumanReadableDate(date: string): string {
+export function formatDate(date: string): string {
   return format(parseISO(date), 'MMM dd, yyyy');
 }

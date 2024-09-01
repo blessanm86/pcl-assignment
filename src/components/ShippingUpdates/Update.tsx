@@ -1,5 +1,5 @@
 import { Heading } from '@pcl/components/Heading.tsx';
-import { formatDateTime } from '@pcl/utils/date.ts';
+import { formatISODateTime } from '@pcl/utils/date.ts';
 
 type Props = Checkpoint;
 
@@ -18,7 +18,7 @@ export function Update({
           {city}
         </p>
         <p className={'whitespace-nowrap text-right text-sm text-gray-900'}>
-          {formatDateTime(event_timestamp)}
+          {formatISODateTime(event_timestamp)}
         </p>
       </div>
     </li>
