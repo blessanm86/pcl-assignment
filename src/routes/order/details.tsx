@@ -52,24 +52,28 @@ function Details() {
   const [latestUpdate] = order.checkpoints;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-200 to-blue-50">
-      <div className="mx-auto grid gap-8 p-0 sm:p-4">
-        <div className="grid grid-cols-1 place-items-stretch gap-4 lg:grid-cols-2 xl:grid-cols-3">
-          <Box>
-            <LatestStatus
-              status={latestUpdate.status}
-              details={latestUpdate.status_details}
-              meta={latestUpdate.meta}
-            />
-          </Box>
-          <Box>
-            <ShippingUpdates updates={order.checkpoints} />
-          </Box>
-          <Box>
-            <ArticleList articles={order.delivery_info.articles} />
-          </Box>
-        </div>
+    <PageWrapper>
+      <div className="grid grid-cols-1 place-items-stretch gap-4 lg:grid-cols-2 xl:grid-cols-3">
+        <Box>
+          <LatestStatus
+            status={latestUpdate.status}
+            details={latestUpdate.status_details}
+            meta={latestUpdate.meta}
+          />
+        </Box>
+        <Box>
+          <ShippingUpdates updates={order.checkpoints} />
+        </Box>
+        <Box>
+          <ArticleList articles={order.delivery_info.articles} />
+        </Box>
       </div>
-    </div>
+
+      <Box className={'flex justify-center bg-transparent shadow-none'}>
+        <Link to={'/order/tracking'} className={'underline'}>
+          Click here to search for another order
+        </Link>
+      </Box>
+    </PageWrapper>
   );
 }

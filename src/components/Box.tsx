@@ -6,8 +6,13 @@ export const Box: React.FC<{
   children: React.ReactNode;
 }> = ({ className = '', children }) => {
   return (
-    <div className={clsx(className, 'sm:mx-auto sm:w-full')}>
-      <div className="h-full bg-white p-8 shadow sm:rounded">{children}</div>
+    <div
+      className={clsx(
+        className,
+        'h-full bg-white p-8 shadow sm:mx-auto sm:w-full sm:rounded',
+      )}
+    >
+      {children}
     </div>
   );
 };
