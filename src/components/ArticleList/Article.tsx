@@ -1,4 +1,4 @@
-import { formatCurrency } from '../../utils/number.ts';
+import { formatCurrency } from '@pcl/utils/number.ts';
 
 type Props = Article;
 

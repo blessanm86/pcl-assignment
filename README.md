@@ -2,15 +2,15 @@
 [x] - Scaffold project via vite and setup git repo
 [x] - Setup tanstack router with 2 routes
 [x] - Create UI for the input page
-[ ] - Create UI for the details page
+[x] - Create UI for the details page
 [x] - Setup form for the input page including validations
 [x] - Setup MSW for API mocking
-[ ] - Setup routing between pages
-[ ] - Setup API request for input page
-[ ] - Ensure details page renders API data
-[ ] - Check for happy, error, direct url access, back button, refresh flows
-[ ] - Check for lint errors
-[ ] - Check for TS errors
+[x] - Setup routing between pages
+[x] - Setup API request for input page
+[x] - Ensure details page renders API data
+[x] - Check for happy, error, direct url access, back button, refresh flows
+[x] - Check for lint errors
+[x] - Check for TS errors
 [ ] - Add some unit tests
 [ ] - Add e2e tests
 [ ] - Deploy to some platform

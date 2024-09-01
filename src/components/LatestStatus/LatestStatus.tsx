@@ -1,6 +1,6 @@
-import { Heading } from '../Heading.tsx';
-import { NewDeliveryDate } from './NewDeliveryDate.tsx';
-import { Pickup } from './Pickup.tsx';
+import { NewDeliveryDate } from '@pcl//components/LatestStatus/NewDeliveryDate.tsx';
+import { Heading } from '@pcl/components/Heading.tsx';
+import { Pickup } from '@pcl/components/LatestStatus/Pickup.tsx';
 
 type Props = {
   status: Checkpoint['status'];

@@ -1,5 +1,5 @@
-import { Heading } from '../Heading.tsx';
-import { Update } from './Update.tsx';
+import { Heading } from '@pcl/components/Heading.tsx';
+import { Update } from '@pcl/components/ShippingUpdates/Update.tsx';
 
 type Props = {
   updates: Checkpoint[];

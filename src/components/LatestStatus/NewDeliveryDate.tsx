@@ -1,4 +1,4 @@
-import { getHumanReadableDate } from '../../utils/date.ts';
+import { getHumanReadableDate } from '@pcl/utils/date.ts';
 
 type Props = DeliveryMeta;
 

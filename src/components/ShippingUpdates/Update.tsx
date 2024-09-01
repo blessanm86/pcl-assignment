@@ -1,5 +1,5 @@
-import { formatDateTime } from '../../utils/date.ts';
-import { Heading } from '../Heading.tsx';
+import { Heading } from '@pcl/components/Heading.tsx';
+import { formatDateTime } from '@pcl/utils/date.ts';
 
 type Props = Checkpoint;
 

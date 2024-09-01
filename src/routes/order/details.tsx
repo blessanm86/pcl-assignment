@@ -1,13 +1,13 @@
+import { getOrder } from '@pcl/api/getOrder.ts';
+import { ArticleList } from '@pcl/components/ArticleList/ArticleList.tsx';
+import { Box } from '@pcl/components/Box.tsx';
+import { LoadingIcon } from '@pcl/components/Icons/LoadingIcon.tsx';
+import { LatestStatus } from '@pcl/components/LatestStatus/LatestStatus.tsx';
+import { PageWrapper } from '@pcl/components/PageWrapper.tsx';
+import { ShippingUpdates } from '@pcl/components/ShippingUpdates/ShippingUpdates.tsx';
 import { createFileRoute, Link, Navigate } from '@tanstack/react-router';
 import { zodSearchValidator } from '@tanstack/router-zod-adapter';
 import { z } from 'zod';
-import { getOrder } from '../../api/getOrder.ts';
-import { ArticleList } from '../../components/ArticleList/ArticleList.tsx';
-import { Box } from '../../components/Box.tsx';
-import { LoadingIcon } from '../../components/Icons/LoadingIcon.tsx';
-import { LatestStatus } from '../../components/LatestStatus/LatestStatus.tsx';
-import { PageWrapper } from '../../components/PageWrapper.tsx';
-import { ShippingUpdates } from '../../components/ShippingUpdates/ShippingUpdates.tsx';
 
 const searchSchema = z.object({
   orderNumber: z.string().default(''),

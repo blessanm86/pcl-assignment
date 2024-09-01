@@ -1,11 +1,11 @@
+import parcelLabLogo from '@pcl/assets/parcellab_logo.jpeg';
+import { Box } from '@pcl/components/Box.tsx';
+import { Button } from '@pcl/components/Button.tsx';
+import { Heading } from '@pcl/components/Heading.tsx';
+import { Input } from '@pcl/components/Input.tsx';
+import { PageWrapper } from '@pcl/components/PageWrapper.tsx';
+import { useOrderTrackingForm } from '@pcl/hooks/useOrderTrackingForm.ts';
 import { createFileRoute, useNavigate } from '@tanstack/react-router';
-import parcelLabLogo from '../../assets/parcellab_logo.jpeg';
-import { Box } from '../../components/Box.tsx';
-import { Button } from '../../components/Button.tsx';
-import { Heading } from '../../components/Heading.tsx';
-import { Input } from '../../components/Input.tsx';
-import { PageWrapper } from '../../components/PageWrapper.tsx';
-import { useOrderTrackingForm } from '../../hooks/useOrderTrackingForm.ts';
 
 export const Route = createFileRoute('/order/tracking')({
   component: Tracking,

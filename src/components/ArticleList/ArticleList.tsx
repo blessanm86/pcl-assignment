@@ -1,5 +1,5 @@
-import { Heading } from '../Heading.tsx';
-import { Article } from './Article.tsx';
+import { Article } from '@pcl/components/ArticleList/Article.tsx';
+import { Heading } from '@pcl/components/Heading.tsx';
 
 type Props = {
   articles: Article[];
