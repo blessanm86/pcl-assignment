@@ -1,6 +1,6 @@
 type Order = {
   _id: string;
-  courier: string;
+  courier: Courier;
   tracking_number: string;
   created: string;
   updated: string;
@@ -10,12 +10,32 @@ type Order = {
   zip_code: string;
 };
 
+type Courier = 'dhl' | 'ups';
+
 type Checkpoint = {
   status_details: string;
   event_timestamp: string;
-  status: string;
-  country_iso3: string;
-  city: string;
+  status:
+    | 'Registered'
+    | 'In transit'
+    | 'Failed delivery attempt'
+    | 'New delivery date set'
+    | 'Ready for collection';
+  country_iso3: 'USA' | 'DEU';
+  city: 'Knoxville' | 'Munich' | 'Hamburg';
+  meta?: DeliveryMeta | PickupMeta;
+};
+
+type DeliveryMeta = {
+  delivery_date: string;
+  delivery_time_frame_from: string;
+  delivery_time_frame_to: string;
+};
+
+type PickupMeta = {
+  pickup_address: string;
+  pickup_address_link: string;
+  pickup_address_map_url: string;
 };
 
 type DeliveryInfo = {
@@ -35,7 +55,7 @@ type DeliveryInfo = {
 type Article = {
   articleNo: string;
   articleName: string;
-  articleImageUrl: string;
+  articleImageUrl?: string;
   quantity: number;
   price: number;
 };
