@@ -7,9 +7,7 @@ export const Box: React.FC<{
 }> = ({ className = '', children }) => {
   return (
     <div className={clsx(className, 'sm:mx-auto sm:w-full')}>
-      <div className="h-full bg-white px-6 py-8 shadow sm:rounded sm:px-12">
-        {children}
-      </div>
+      <div className="h-full bg-white p-8 shadow sm:rounded">{children}</div>
     </div>
   );
 };
