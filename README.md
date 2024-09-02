@@ -1,73 +1,22 @@
-# To Do
-[x] - Scaffold project via vite and setup git repo
-[x] - Setup tanstack router with 2 routes
-[x] - Create UI for the input page
-[x] - Create UI for the details page
-[x] - Setup form for the input page including validations
-[x] - Setup MSW for API mocking
-[x] - Setup routing between pages
-[x] - Setup API request for input page
-[x] - Ensure details page renders API data
-[x] - Check for happy, error, direct url access, back button, refresh flows
-[x] - Check for lint errors
-[x] - Check for TS errors
-[x] - Add some unit tests
-[-] - Add e2e tests
-[-] - Deploy to some platform
-[ ] - Cleanup the README file
-[x] - Look into path aliases
+# Parcel Labs Assignment
 
-/order-track
-/order-details
+### Project Setup And Dependencies
+1. This project was scaffolded with vite with the `react-ts` template
+2. `@tanstack/react-router` is used for routing, data loading and caching
+3. `zod` is used for validating the url search query params and tracking form
+4. `react-hook-form` is used for form management
+5. `tailwind, clsx` used for styling
+6.  `date-fns` used for date manipulation
+7. `vitest, @testing-library/react` is used for writing unit/integration tests
+8. `msw` for API mocking
 
+### Architecture/Flows
 
-# React + TypeScript + Vite
+1. The app is url driven, meaning the required state is store as query params
+2. The tracking page is responsible for collecting user input and redirecting to the order details page with the user input as query params
+3. The track button in the tracking page is only enabled if there is user input
+4. The details page uses the data in query param to make an API call to render the details
+5. If the order cannot be found, an error state is shown with the ability for the user to navigate to the tracking page to try again
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Considering additional points
+1. e2e testing with playwright
