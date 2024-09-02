@@ -1,22 +1,34 @@
 # Parcel Labs Assignment
+https://parcellab.notion.site/parcelLab-Challenge-Frontend-77d17700118b44dab94ca4a5b5ecf292
+
+### Run locally
+```bash
+npm i
+npm run dev
+```
 
 ### Project Setup And Dependencies
-1. This project was scaffolded with vite with the `react-ts` template
-2. `@tanstack/react-router` is used for routing, data loading and caching
-3. `zod` is used for validating the url search query params and tracking form
-4. `react-hook-form` is used for form management
-5. `tailwind, clsx` used for styling
-6.  `date-fns` used for date manipulation
-7. `vitest, @testing-library/react` is used for writing unit/integration tests
-8. `msw` for API mocking
+1. Uses `vite` for bundling and development. `react-ts` template was used to scaffold the project
+2. Uses `@tanstack/react-router` routing, data loading and caching
+3. Uses `zod` for validating url search query params and form validation
+4. Uses `react-hook-form` for form management
+5. Uses `tailwind, clsx` for styling
+6. Uses `date-fns` for date formatting
+7. Uses `vitest, @testing-library/react` for unit/integration tests
+8. Uses `msw` for API mocking for development and tests
+9. Uses `typescript` for type checking
+10. Uses `eslint` for linting
 
-### Architecture/Flows
+### Application Flow
 
-1. The app is url driven, meaning the required state is store as query params
-2. The tracking page is responsible for collecting user input and redirecting to the order details page with the user input as query params
-3. The track button in the tracking page is only enabled if there is user input
-4. The details page uses the data in query param to make an API call to render the details
-5. If the order cannot be found, an error state is shown with the ability for the user to navigate to the tracking page to try again
+1. The app uses the url query params for state management
+2. The tracking page is only responsible for collecting user input. By default, the `Track` button is disabled. It will be enabled once user enters the input for 2 fields.
+3. Once the `Track` button is clicked, user is routed to the details page with the `orderNumber` and `zipCode` as query params
+4. The details page, uses the query params to fetch the order information
+5. If order is found, the order information is displayed
+6. If the order cannot be found, an error message is shown with the ability for the user to navigate to the tracking page to try again
 
-### Considering additional points
-1. e2e testing with playwright
+### Out of scope
+1. e2e testing
+2. a11y
+3. Unit/Integration tests are not exhaustive of all possible cases
