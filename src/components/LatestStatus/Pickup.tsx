@@ -7,7 +7,7 @@ export function Pickup({
 }: Props) {
   return (
     <div>
-      <p className="mb-2 font-medium">
+      <p className="mb-2 text-sm">
         Location:{' '}
         <a
           className="underline"

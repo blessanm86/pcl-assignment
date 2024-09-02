@@ -12,12 +12,10 @@ export function Update({
   return (
     <li className={'grid gap-1'}>
       <Heading as={'h4'}>{status}</Heading>
-      <p className="text-gray-500">{status_details}</p>
+      <p className="text-base text-gray-500">{status_details}</p>
       <div className={'flex justify-between'}>
-        <p className={'whitespace-nowrap text-right text-sm text-gray-900'}>
-          {city}
-        </p>
-        <p className={'whitespace-nowrap text-right text-sm text-gray-900'}>
+        <p className={'whitespace-nowrap text-right text-sm'}>{city}</p>
+        <p className={'whitespace-nowrap text-right text-sm'}>
           {formatISODateTime(event_timestamp)}
         </p>
       </div>

@@ -9,7 +9,7 @@ export function NewDeliveryDate({
 }: Props) {
   return (
     <div>
-      <p className="mb-2 font-medium">
+      <p className="mb-2 text-sm">
         {formatDate(delivery_date)}, {delivery_time_frame_from} -{' '}
         {delivery_time_frame_to}
       </p>

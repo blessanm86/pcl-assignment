@@ -24,7 +24,7 @@ export function LatestStatus({ status, details, meta }: Props) {
   return (
     <div className={'grid gap-4'}>
       <Heading as={'h2'}>{status}</Heading>
-      <p>{details}</p>
+      <p className={'text-base text-gray-500'}>{details}</p>
       {renderMeta(status, meta)}
     </div>
   );

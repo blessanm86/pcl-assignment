@@ -1,3 +1,4 @@
+import { Heading } from '@pcl/components/Heading.tsx';
 import { formatCurrency } from '@pcl/utils/number.ts';
 
 type Props = Article;
@@ -20,14 +21,12 @@ export function Article({
           />
         </div>
         <div className="min-w-0 flex-auto">
-          <p className="text-sm font-semibold leading-6 text-gray-900">
+          <Heading as={'h4'}>
             {quantity}x {articleName}
-          </p>
-          <p className="mt-1 flex text-xs leading-5 text-gray-500">
+          </Heading>
+          <p className="text-base text-gray-500">{formatCurrency(price)}</p>
+          <p className={'mt-1 whitespace-nowrap text-sm'}>
             Article No: {articleNo}
-          </p>
-          <p className="mt-1 flex text-xs leading-5 text-gray-900">
-            {formatCurrency(price)}
           </p>
         </div>
       </div>
