@@ -9,7 +9,7 @@ export function ShippingUpdates({ updates }: Props) {
   return (
     <div className={'grid gap-4'}>
       <Heading as={'h2'}>Shipping Updates</Heading>
-      <ul className="grid gap-4">
+      <ul className="grid gap-4" data-testid={'shipping-updates-list'}>
         {updates.map((upd) => (
           <Update {...upd} key={upd.event_timestamp} />
         ))}

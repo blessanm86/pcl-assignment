@@ -1,4 +1,4 @@
-import { formatISODateTime } from '@pcl/utils/date.ts';
+import { formatDate, formatISODateTime } from '@pcl/utils/date.ts';
 import { expect, test } from 'vitest';
 
 test('when ISO date provided, return human readable date and time', () => {
@@ -8,5 +8,5 @@ test('when ISO date provided, return human readable date and time', () => {
 });
 
 test('when date provided, return human readable date', () => {
-  expect(formatISODateTime('2023-01-25')).toEqual('Jan 25, 2023');
+  expect(formatDate('2023-01-25')).toEqual('Jan 25, 2023');
 });

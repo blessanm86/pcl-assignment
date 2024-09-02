@@ -11,9 +11,9 @@
 [x] - Check for happy, error, direct url access, back button, refresh flows
 [x] - Check for lint errors
 [x] - Check for TS errors
-[ ] - Add some unit tests
-[ ] - Add e2e tests
-[ ] - Deploy to some platform
+[x] - Add some unit tests
+[-] - Add e2e tests
+[-] - Deploy to some platform
 [ ] - Cleanup the README file
 [x] - Look into path aliases
 
