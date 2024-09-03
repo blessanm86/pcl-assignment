@@ -1,6 +1,15 @@
 # Parcel Labs Assignment
 https://parcellab.notion.site/parcelLab-Challenge-Frontend-77d17700118b44dab94ca4a5b5ecf292
 
+The deployed app can be viewed [here](https://bm-pcl-assignment.netlify.app/)
+
+| Order Number | Zip Code | Link                                                                                                  | Comment      |
+|--------------|----------|-------------------------------------------------------------------------------------------------------|--------------|
+| 0000RTAB1    | 60156    | [Link](https://bm-pcl-assignment.netlify.app/order/details?orderNumber=0000RTAB1&zipCode=%2260156%22) | Registered   |
+| 0000RTAB2    | 60156    | [Link](https://bm-pcl-assignment.netlify.app/order/details?orderNumber=0000RTAB2&zipCode=%2260156%22) | New Delivery |
+| 0000RTAB3    | 81371    | [Link](https://bm-pcl-assignment.netlify.app/order/details?orderNumber=0000RTAB3&zipCode=%2281371%22) | Pickup       |
+
+
 ### Run locally
 ```bash
 npm i
