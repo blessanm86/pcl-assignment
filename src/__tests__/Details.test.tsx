@@ -12,9 +12,9 @@ test('Details page: check for error page when order cannot be found', async () =
 
   render(<RouterProvider router={router} />);
 
-  await expect
-    .poll(() => screen.getByText('Sorry, your order could not be found!'))
-    .toBeInTheDocument();
+  expect(
+    await screen.findByText('Sorry, your order could not be found!'),
+  ).toBeInTheDocument();
 });
 
 test('Details page: check ability to go back to tracking page when order cannot be found', async () => {
@@ -24,9 +24,9 @@ test('Details page: check ability to go back to tracking page when order cannot 
 
   render(<RouterProvider router={router} />);
 
-  await expect
-    .poll(() => screen.getByText('Sorry, your order could not be found!'))
-    .toBeInTheDocument();
+  expect(
+    await screen.findByText('Sorry, your order could not be found!'),
+  ).toBeInTheDocument();
 
   const linkElement = screen.getByRole('link', {
     name: /Click here to try again/i,
@@ -45,9 +45,9 @@ test('Details page: check order is rendered when correct details are provided', 
 
   render(<RouterProvider router={router} />);
 
-  await expect
-    .poll(() => screen.getByRole('heading', { name: /Registered/i, level: 2 }))
-    .toBeInTheDocument();
+  expect(
+    await screen.findByRole('heading', { name: /Registered/i, level: 2 }),
+  ).toBeInTheDocument();
 
   expect(
     screen.getByRole('heading', { name: /Shipping Updates/i, level: 2 }),
@@ -64,9 +64,9 @@ test('Details page: check ability to go to tracking page', async () => {
 
   render(<RouterProvider router={router} />);
 
-  await expect
-    .poll(() => screen.getByRole('heading', { name: /Registered/i, level: 2 }))
-    .toBeInTheDocument();
+  expect(
+    await screen.findByRole('heading', { name: /Registered/i, level: 2 }),
+  ).toBeInTheDocument();
 
   const linkElement = screen.getByRole('link', {
     name: /Click here to search for another order/i,
@@ -85,9 +85,9 @@ test('Details page:ensure page works with back button click', async () => {
 
   render(<RouterProvider router={router} />);
 
-  await expect
-    .poll(() => screen.getByRole('heading', { name: /Registered/i, level: 2 }))
-    .toBeInTheDocument();
+  expect(
+    await screen.findByRole('heading', { name: /Registered/i, level: 2 }),
+  ).toBeInTheDocument();
 
   const linkElement = screen.getByRole('link', {
     name: /Click here to search for another order/i,
@@ -99,7 +99,7 @@ test('Details page:ensure page works with back button click', async () => {
   });
 
   router.history.back();
-  await expect
-    .poll(() => screen.getByRole('heading', { name: /Registered/i, level: 2 }))
-    .toBeInTheDocument();
+  expect(
+    await screen.findByRole('heading', { name: /Registered/i, level: 2 }),
+  ).toBeInTheDocument();
 });

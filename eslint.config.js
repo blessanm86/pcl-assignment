@@ -22,6 +22,6 @@ export default [
     },
   },
   {
-    ignores: ['**/mockServiceWorker.js'],
+    ignores: ['**/mockServiceWorker.js', 'dist'],
   },
 ];

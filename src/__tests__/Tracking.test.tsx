@@ -10,9 +10,7 @@ test('Tracking page: check for page render and initial state', async () => {
 
   render(<RouterProvider router={router} />);
 
-  await expect
-    .poll(() => screen.getByText('Track your order'))
-    .toBeInTheDocument();
+  expect(await screen.findByText('Track your order')).toBeInTheDocument();
 
   expect(screen.getByRole('button', { name: /Track/i })).toBeDisabled();
 });
@@ -21,9 +19,7 @@ test('Tracking page: fill form, submit and ensure url update', async () => {
   const router = createRouterWithMemoryHistory();
   render(<RouterProvider router={router} />);
 
-  await expect
-    .poll(() => screen.getByText('Track your order'))
-    .toBeInTheDocument();
+  expect(await screen.findByText('Track your order')).toBeInTheDocument();
 
   const orderNumberInput = screen.getByLabelText(/order number/i);
   const zipCodeInput = screen.getByLabelText(/zip code/i);
