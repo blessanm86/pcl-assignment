@@ -5,8 +5,12 @@ import { z } from 'zod';
 const schema = z.object({
   orderNumber: z
     .string()
+    .trim()
     .min(1, { message: 'Please provide a valid order number' }),
-  zipCode: z.string().min(1, { message: 'Please provide a valid zip code' }),
+  zipCode: z
+    .string()
+    .trim()
+    .min(1, { message: 'Please provide a valid zip code' }),
 });
 
 export function useOrderTrackingForm() {

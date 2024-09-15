@@ -10,8 +10,8 @@ import { zodSearchValidator } from '@tanstack/router-zod-adapter';
 import { z } from 'zod';
 
 const searchSchema = z.object({
-  orderNumber: z.string().default(''),
-  zipCode: z.string().default(''),
+  orderNumber: z.string().trim().default(''),
+  zipCode: z.string().trim().default(''),
 });
 
 export const Route = createFileRoute('/order/details')({

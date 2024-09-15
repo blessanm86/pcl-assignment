@@ -15,7 +15,6 @@ function Tracking() {
   const {
     register,
     handleSubmit,
-    getValues,
     formState: { errors, isValid },
   } = useOrderTrackingForm();
   const navigate = useNavigate({ from: '/order/tracking' });
@@ -38,12 +37,12 @@ function Tracking() {
 
         <form
           className="space-y-6"
-          onSubmit={handleSubmit(() =>
+          onSubmit={handleSubmit(({ orderNumber, zipCode }) =>
             navigate({
               to: '/order/details',
               search: {
-                orderNumber: getValues('orderNumber'),
-                zipCode: getValues('zipCode'),
+                orderNumber: orderNumber,
+                zipCode: zipCode,
               },
             }),
           )}
